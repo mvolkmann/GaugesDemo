@@ -11,6 +11,8 @@
 		1AF027D32910732E00AF1ADB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF027D22910732E00AF1ADB /* ContentView.swift */; };
 		1AF027D52910733000AF1ADB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AF027D42910733000AF1ADB /* Assets.xcassets */; };
 		1AF027D82910733000AF1ADB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AF027D72910733000AF1ADB /* Preview Assets.xcassets */; };
+		1AF027DF291073AA00AF1ADB /* LinearGauges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF027DE291073AA00AF1ADB /* LinearGauges.swift */; };
+		1AF027E12910742C00AF1ADB /* CircularGauges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF027E02910742C00AF1ADB /* CircularGauges.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		1AF027D22910732E00AF1ADB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1AF027D42910733000AF1ADB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1AF027D72910733000AF1ADB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1AF027DE291073AA00AF1ADB /* LinearGauges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearGauges.swift; sourceTree = "<group>"; };
+		1AF027E02910742C00AF1ADB /* CircularGauges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularGauges.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +36,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A7651122910779D0071D081 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1AF027E02910742C00AF1ADB /* CircularGauges.swift */,
+				1AF027D22910732E00AF1ADB /* ContentView.swift */,
+				1AF027DE291073AA00AF1ADB /* LinearGauges.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		1AF027C42910732E00AF1ADB = {
 			isa = PBXGroup;
 			children = (
@@ -52,8 +66,8 @@
 			isa = PBXGroup;
 			children = (
 				1AF027D02910732E00AF1ADB /* GaugesDemoApp.swift */,
-				1AF027D22910732E00AF1ADB /* ContentView.swift */,
 				1AF027D42910733000AF1ADB /* Assets.xcassets */,
+				1A7651122910779D0071D081 /* Views */,
 				1AF027D62910733000AF1ADB /* Preview Content */,
 			);
 			path = GaugesDemo;
@@ -137,8 +151,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AF027E12910742C00AF1ADB /* CircularGauges.swift in Sources */,
 				1AF027D32910732E00AF1ADB /* ContentView.swift in Sources */,
 				1AF027D12910732E00AF1ADB /* GaugesDemoApp.swift in Sources */,
+				1AF027DF291073AA00AF1ADB /* LinearGauges.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
