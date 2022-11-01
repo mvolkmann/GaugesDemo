@@ -3,7 +3,7 @@ import SwiftUI
 struct LinearGauges: View {
     @State private var value = 0.0
 
-    private var foo = 100.0
+    private var maximum = 100.0
     private var minimum = 0.0
 
     var body: some View {
@@ -20,18 +20,18 @@ struct LinearGauges: View {
 
                     Gauge(
                         value: value,
-                        in: minimum ... foo,
+                        in: minimum ... maximum,
                         label: { Text("Rating") },
                         currentValueLabel: { Text(value) },
                         minimumValueLabel: { Text(minimum) },
-                        maximumValueLabel: { Text(foo) }
+                        maximumValueLabel: { Text(maximum) }
                     )
                     .gaugeStyle(.linearCapacity) // default in iOS
                     .tint(.red)
 
                     Gauge(
                         value: value,
-                        in: minimum ... foo,
+                        in: minimum ... maximum,
                         label: {}
                     )
                     // This fills with repeated images instead of a color.
@@ -51,12 +51,12 @@ struct LinearGauges: View {
                     .font(.caption)
                     Gauge(
                         value: value,
-                        in: minimum ... foo,
+                        in: minimum ... maximum,
                         label: {},
                         currentValueLabel: {},
                         // currentValueLabel: { Text(value) }
                         minimumValueLabel: { Text(minimum) },
-                        maximumValueLabel: { Text(foo) }
+                        maximumValueLabel: { Text(maximum) }
                     )
                     .tint(Gradient(
                         colors: [.blue, .green, .yellow, .orange, .red]
@@ -73,11 +73,11 @@ struct LinearGauges: View {
                     .font(.caption)
                     Gauge(
                         value: value,
-                        in: minimum ... foo,
+                        in: minimum ... maximum,
                         label: { Text("Temperature") },
                         currentValueLabel: { Text(value) },
                         minimumValueLabel: { Text(minimum) },
-                        maximumValueLabel: { Text(foo) }
+                        maximumValueLabel: { Text(maximum) }
                     )
                     .tint(.red)
                     .gaugeStyle(.accessoryLinearCapacity)
@@ -87,7 +87,8 @@ struct LinearGauges: View {
             .navigationTitle("Linear Gauges")
 
             Spacer()
-            Slider(value: $value, in: minimum ... foo)
+
+            Slider(value: $value, in: minimum ... maximum)
                 .padding()
         }
     }
