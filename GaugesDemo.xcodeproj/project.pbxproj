@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A765117291166AC0071D081 /* TextExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A765116291166AC0071D081 /* TextExtension.swift */; };
 		1AF027D12910732E00AF1ADB /* GaugesDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF027D02910732E00AF1ADB /* GaugesDemoApp.swift */; };
 		1AF027D32910732E00AF1ADB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF027D22910732E00AF1ADB /* ContentView.swift */; };
 		1AF027D52910733000AF1ADB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AF027D42910733000AF1ADB /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A765116291166AC0071D081 /* TextExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextExtension.swift; sourceTree = "<group>"; };
 		1AF027CD2910732E00AF1ADB /* GaugesDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GaugesDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AF027D02910732E00AF1ADB /* GaugesDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaugesDemoApp.swift; sourceTree = "<group>"; };
 		1AF027D22910732E00AF1ADB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -46,6 +48,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		1A7651152911669E0071D081 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1A765116291166AC0071D081 /* TextExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		1AF027C42910732E00AF1ADB = {
 			isa = PBXGroup;
 			children = (
@@ -67,6 +77,7 @@
 			children = (
 				1AF027D02910732E00AF1ADB /* GaugesDemoApp.swift */,
 				1AF027D42910733000AF1ADB /* Assets.xcassets */,
+				1A7651152911669E0071D081 /* Extensions */,
 				1A7651122910779D0071D081 /* Views */,
 				1AF027D62910733000AF1ADB /* Preview Content */,
 			);
@@ -153,6 +164,7 @@
 			files = (
 				1AF027E12910742C00AF1ADB /* CircularGauges.swift in Sources */,
 				1AF027D32910732E00AF1ADB /* ContentView.swift in Sources */,
+				1A765117291166AC0071D081 /* TextExtension.swift in Sources */,
 				1AF027D12910732E00AF1ADB /* GaugesDemoApp.swift in Sources */,
 				1AF027DF291073AA00AF1ADB /* LinearGauges.swift in Sources */,
 			);

@@ -3,13 +3,13 @@ import SwiftUI
 struct LinearGauges: View {
     @State private var value = 0.0
 
-    private var maximum = 10.0
+    private var foo = 100.0
     private var minimum = 0.0
 
     var body: some View {
         NavigationStack {
             Form {
-                Section("Linear Capacity") {
+                Section("linearCapacity") {
                     Text("""
                     The label appears above the gauge. \
                     The optional currentValueLabel appears below. \
@@ -20,22 +20,30 @@ struct LinearGauges: View {
 
                     Gauge(
                         value: value,
-                        in: minimum ... maximum,
+                        in: minimum ... foo,
                         label: { Text("Rating") },
-                        currentValueLabel: { Text("\(Int(value))") },
-                        minimumValueLabel: { Text("\(Int(minimum))") },
-                        maximumValueLabel: { Text("\(Int(maximum))") }
+                        currentValueLabel: { Text(value) },
+                        minimumValueLabel: { Text(minimum) },
+                        maximumValueLabel: { Text(foo) }
+                    )
+                    .gaugeStyle(.linearCapacity) // default in iOS
+                    .tint(.red)
+
+                    Gauge(
+                        value: value,
+                        in: minimum ... foo,
+                        label: {}
                     )
                     // This fills with repeated images instead of a color.
                     .tint(ImagePaint(image: Image("star")))
-                    .gaugeStyle(.linearCapacity)
                 }
                 .textCase(nil)
 
-                Section("AccessoryLinear") {
+                Section("accessoryLinear") {
                     Text("""
-                    The label is not displayed. \
-                    The currentValueLabel is only displayed if \
+                    The label is required but not displayed. \
+                    The optional currentValueLabel is \
+                    displayed on the leading edge only if \
                     minimumValueLabel and maximumValueLabel are not provided. \
                     The optional minimumValueLabel and maximumValueLabel \
                     values appear on the leading and trailing edges.
@@ -43,11 +51,12 @@ struct LinearGauges: View {
                     .font(.caption)
                     Gauge(
                         value: value,
-                        in: minimum ... maximum,
+                        in: minimum ... foo,
                         label: {},
-                        currentValueLabel: { Text("\(Int(value))") },
-                        minimumValueLabel: { Text("\(Int(minimum))") },
-                        maximumValueLabel: { Text("\(Int(maximum))") }
+                        currentValueLabel: {},
+                        // currentValueLabel: { Text(value) }
+                        minimumValueLabel: { Text(minimum) },
+                        maximumValueLabel: { Text(foo) }
                     )
                     .tint(Gradient(
                         colors: [.blue, .green, .yellow, .orange, .red]
@@ -56,19 +65,19 @@ struct LinearGauges: View {
                 }
                 .textCase(nil)
 
-                Section("AccessoryLinearCapacity") {
+                Section("accessoryLinearCapacity") {
                     Text("""
                     The arguments are applied in the same way \
-                    as with Linear Capacity.
+                    as with .linearCapacity.
                     """)
                     .font(.caption)
                     Gauge(
                         value: value,
-                        in: minimum ... maximum,
+                        in: minimum ... foo,
                         label: { Text("Temperature") },
-                        currentValueLabel: { Text("\(Int(value))") },
-                        minimumValueLabel: { Text("\(Int(minimum))") },
-                        maximumValueLabel: { Text("\(Int(maximum))") }
+                        currentValueLabel: { Text(value) },
+                        minimumValueLabel: { Text(minimum) },
+                        maximumValueLabel: { Text(foo) }
                     )
                     .tint(.red)
                     .gaugeStyle(.accessoryLinearCapacity)
@@ -78,7 +87,7 @@ struct LinearGauges: View {
             .navigationTitle("Linear Gauges")
 
             Spacer()
-            Slider(value: $value, in: minimum ... maximum)
+            Slider(value: $value, in: minimum ... foo)
                 .padding()
         }
     }
