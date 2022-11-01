@@ -24,6 +24,7 @@ struct CircularGauges: View {
                             label: {
                                 Text("Rating")
                                     .foregroundColor(.purple)
+                                    // .fontSize(.caption) // does not help
                                     .scaleEffect(0.75) // to fit at bottom
                             },
                             currentValueLabel: {
