@@ -19,7 +19,7 @@ struct LinearGauges: View {
                     .font(.caption)
 
                     Gauge(
-                        value: value,
+                        value: Int(value.rounded()),
                         in: minimum ... maximum,
                         label: { Text("Rating") },
                         currentValueLabel: { Text(value) },
@@ -30,7 +30,7 @@ struct LinearGauges: View {
                     .tint(.red)
 
                     Gauge(
-                        value: value,
+                        value: Int(value.rounded()),
                         in: minimum ... maximum,
                         label: {}
                     )
@@ -50,7 +50,7 @@ struct LinearGauges: View {
                     """)
                     .font(.caption)
                     Gauge(
-                        value: value,
+                        value: Int(value.rounded()),
                         in: minimum ... maximum,
                         label: {},
                         currentValueLabel: {},
@@ -88,6 +88,7 @@ struct LinearGauges: View {
 
             Spacer()
 
+            // Slider(value: $value, in: minimum ... maximum)
             Slider(value: $value, in: minimum ... maximum)
                 .padding()
         }
